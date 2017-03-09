@@ -241,7 +241,7 @@
 							<th>Discard</th>
 							<th>Score</th>
 							<th>Hand</th>
-							<th>Crib</th>
+							<th>Crib*</th>
 							<th>Min</th>
 							<th>Max</th>
 						</tr>
@@ -258,7 +258,8 @@
 				<ul id='column_descrips_list' class="card_title">
 					<li><strong>Discard:</strong> Card to throw in the crib.</li>
 					<li><strong>Score:</strong> The net expected score including the crib impact.</li>
-					<li><strong>Crib:</strong> The impact of the discarded card thrown in the crib compared to the expected crib score.</li>
+					<li><strong>Hand:</strong> The net expected score from hand + cut.</li>
+					<li><strong>Crib* (Crib impact):</strong> The points gain/loss from the expected crib score with the discarded card minus the average expected crib score.</li>
 					<li><strong>Min|Max:</strong> The minimum|maximum possible score of the hand if card is discarded.</li>
 				</ul>
 			</div>
@@ -526,8 +527,6 @@
 							allowOutsideClick: true});	
 			}
 			localStorage.init = true;
-			//alert('test3');
-			//$("#crib_radio1").click();
 		};
 
 		// Add slideDown animation to Bootstrap dropdown when expanding.
