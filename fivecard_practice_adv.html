@@ -520,9 +520,9 @@
 			}
 
 			if ($('#crib_radio1').is(':checked')) {
-				var optimization_res = optimize(get_current_nums(), get_current_suits_abbrev(), true);
+				var optimization_res = optimize_adv(get_current_nums(), get_current_suits_abbrev(), true);
 			} else {
-				var optimization_res = optimize(get_current_nums(), get_current_suits_abbrev(), false);
+				var optimization_res = optimize_adv(get_current_nums(), get_current_suits_abbrev(), false);
 			}
 			var opt_score = optimization_res[0][1];
 			var selected_score = -1;
