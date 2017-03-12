@@ -198,11 +198,54 @@ function optimize(hand_names, hand_suits, yourcrib) {
 
 	var exp_scores_hand = compute_expected_hand(hand_names, hand_suits);
 	var exp_scores_crib = compute_expected_crib_impact(hand_names, hand_suits);
-	
+
 	if (!yourcrib) {
 		exp_scores_crib = exp_scores_crib.map(function(x) { return -x; });
 	}
-	
+
+	var exp_scores = [];
+	for (var i = 0; i < exp_scores_hand.length; i++){
+  	exp_scores.push((exp_scores_hand[i].score).toFixed(1));
+	}
+
+	var tmp = find_indices_ordered(exp_scores, true);
+
+	return [[hand_names[tmp[0]].concat(hand_suits[tmp[0]]), exp_scores[tmp[0]], 
+					exp_scores_hand[tmp[0]].score.toFixed(1), 
+					exp_scores_crib[tmp[0]].toFixed(1),
+					exp_scores_hand[tmp[0]].min_score.toFixed(0),
+					exp_scores_hand[tmp[0]].max_score.toFixed(0)],
+					[hand_names[tmp[1]].concat(hand_suits[tmp[1]]), exp_scores[tmp[1]], 
+					exp_scores_hand[tmp[1]].score.toFixed(1), 
+					exp_scores_crib[tmp[1]].toFixed(1),
+					exp_scores_hand[tmp[1]].min_score.toFixed(0),
+					exp_scores_hand[tmp[1]].max_score.toFixed(0)],
+					[hand_names[tmp[2]].concat(hand_suits[tmp[2]]), exp_scores[tmp[2]], 
+					exp_scores_hand[tmp[2]].score.toFixed(1), 
+					exp_scores_crib[tmp[2]].toFixed(1),
+					exp_scores_hand[tmp[2]].min_score.toFixed(0), 
+					exp_scores_hand[tmp[2]].max_score.toFixed(0)],
+					[hand_names[tmp[3]].concat(hand_suits[tmp[3]]), exp_scores[tmp[3]], 
+					exp_scores_hand[tmp[3]].score.toFixed(1), 
+					exp_scores_crib[tmp[3]].toFixed(1),
+					exp_scores_hand[tmp[3]].min_score.toFixed(0), 
+					exp_scores_hand[tmp[3]].max_score.toFixed(0)],
+					[hand_names[tmp[4]].concat(hand_suits[tmp[4]]), exp_scores[tmp[4]], 
+					exp_scores_hand[tmp[4]].score.toFixed(1), 
+					exp_scores_crib[tmp[4]].toFixed(1),
+					exp_scores_hand[tmp[4]].min_score.toFixed(0),
+					exp_scores_hand[tmp[4]].max_score.toFixed(0)]];
+}
+
+function optimize_adv(hand_names, hand_suits, yourcrib) {
+
+	var exp_scores_hand = compute_expected_hand(hand_names, hand_suits);
+	var exp_scores_crib = compute_expected_crib_impact(hand_names, hand_suits);
+
+	if (!yourcrib) {
+		exp_scores_crib = exp_scores_crib.map(function(x) { return -x; });
+	}
+
 	var exp_scores = [];
 	for (var i = 0; i < exp_scores_hand.length; i++){
   	exp_scores.push((exp_scores_hand[i].score + exp_scores_crib[i]).toFixed(1));
@@ -236,5 +279,6 @@ function optimize(hand_names, hand_suits, yourcrib) {
 					exp_scores_hand[tmp[4]].min_score.toFixed(0),
 					exp_scores_hand[tmp[4]].max_score.toFixed(0)]];
 }
+
 
 

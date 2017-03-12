@@ -238,7 +238,6 @@
 					<thead>
 						<tr>
 							<th>Discard</th>
-							<th>Score</th>
 							<th>Hand</th>
 							<th>Crib*</th>
 							<th>Min</th>
@@ -256,9 +255,8 @@
 				<center><a id='column_descrips_title'>See Column Descriptions</a></center>
 				<ul id='column_descrips_list' class="card_title">
 					<li><strong>Discard:</strong> Card to throw in the crib.</li>
-					<li><strong>Score:</strong> The net expected score including the crib impact.</li>
-					<li><strong>Hand:</strong> The net expected score from hand + cut.</li>
-					<li><strong>Crib* (Crib impact):</strong> The points gain/loss from the expected crib score with the discarded card minus the average expected crib score.</li>
+					<li><strong>Hand:</strong> Expected hand score.</li>
+					<li><strong>Crib* (Crib potential):</strong> Whether the discarded card could positively (+) or negatively (-) affect your points due to the crib.</li>
 					<li><strong>Min|Max:</strong> The minimum|maximum possible score of the hand if card is discarded.</li>
 				</ul>
 			</div>
@@ -465,16 +463,22 @@
 			$('#optimization_results tbody tr:nth-child(5)').empty();
 			for (var j = 1; j < 6; j++) {
 				for (i in optimization_results[j-1]) {
+					if (Number(i) === 2) {
+						continue;
+					}
+					var tmp_res = optimization_results[j-1][i];
 					if (Number(i) !== 3) {
 						var aes = '<td>';
 					} else if (optimization_results[j-1][i] < 0) {
 						var aes = '<td style="color:#ff4c4c;">';
+						tmp_res = '-';
 					} else if (optimization_results[j-1][i] === 0) {
-						var aes = '<td>';
+						var aes = '<td>';						
 					} else {
-						var aes = '<td style="color:#66b266;">+';
-					}		
-					$('#optimization_results tbody tr:nth-child(' + j + ')').append(aes + optimization_results[j-1][i] + '</td>');	
+						var aes = '<td style="color:#66b266;">';
+						tmp_res = '+';
+					}
+					$('#optimization_results tbody tr:nth-child(' + j + ')').append(aes + tmp_res + '</td>');	
 				}
 			}
 		}
@@ -521,8 +525,8 @@
 
 		window.onload = function () { 
 			if (typeof localStorage.init === 'undefined') {
-				swal({title:"Welcome to Cribbage Optimizer", 
-							text:"This app works best on Chrome and is intended for mobile. Use the menu bar for more options and info. Have fun!",
+				swal({title:"Welcome to Cribbage Assistant!", 
+							text:"Use the menu bar for more options and info. Have fun!",
 							allowOutsideClick: true});	
 			}
 			localStorage.init = true;

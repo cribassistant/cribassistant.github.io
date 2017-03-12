@@ -31,7 +31,7 @@
 
 	  ga('create', 'UA-71304939-2', 'auto');
 	  ga('send', 'pageview');
-	</script>
+	</script>  
 
 </head>
 
@@ -39,7 +39,7 @@
 	
 	<div class="container">
 		<center><h2 id="title_font">Training Ground</h2></center>
-		<center><p class="card_title">== 6 Card Version ==</p></center>
+		<center><p class="card_title">== 5 Card Version ==</p></center>
 		<div class="row">
 		  <div class="col-md-4">
 			  <div class="btn-group dropdown">
@@ -48,10 +48,10 @@
 			  		<li><a href="about.html">All About the App</a></li>
 				    <li class="divider"></li>
 				    <li><a href="index.html">5-Card Evaluator</a></li>
-				    <li><a href="fivecard_practice.html">5-Card Trainer</a></li>
+				    <li style="background-color:#ffff66;"><a href="#">5-Card Trainer</a></li>
 				    <li class="divider"></li>
 				    <li><a href="sixcard_optimizer.html">6-Card Evaluator</a></li>
-				    <li style="background-color:#ffff66;"><a href="#">6-Card Trainer</a></li>
+				    <li><a href="sixcard_practice.html">6-Card Trainer</a></li>
 				    <li class="divider"></li>
 				    <li><a href="scorer.html">Hand Scorer</a></li>
 				    <li class="divider"></li>
@@ -62,18 +62,18 @@
 				<hr>
 				<h1 style="font-weight:bold;">Jump to:</h1>
 				<div class="col-md-6">
-					<a id="practice_optimization_link"><h1 class="card_title" style="margin-bottom:15px;">1. Training: Card Discarding</h1></a>
+					<a id="practice_optimization_link"><h1 class="card_title" style="margin:10px 0 10px 0;">1. Training: Card Discarding</h1></a>
 				</div>
 				<div class="col-md-6">
-					<a id="practice_score_link"><h1 class="card_title">2. Training: Hand Scoring</h1></a>
+					<a id="practice_score_link"><h1 class="card_title" style="margin:10px 0 10px 0;">2. Training: Hand Scoring</h1></a>
 				</div>
 			</div>
 		</div>
 		
 		<div class="row">
-			<center><h1 class="card_title" style="margin-top:15px;">1) Training: Card Discarding</h1></center>
+			<center><h1 class="card_title" style="margin-top:15px;">1. Training: Card Discarding</h1></center>
 			<hr>
-			<h1>1) Begin each round by randomizing your hand.</h1>
+			<h1>1) Begin each round by randomizing your hand and crib control.</h1>
 			<div class="btn-group" style="margin-top:10px;">
 				<button id="randomize_button" type="button" class="btn btn-info" style="width:100%; margin-top:0px;">Randomize Crib Turn and Hand</button>
 			</div>
@@ -93,7 +93,7 @@
 			</div>
 			<div class="col-md-5 col-md-pull-4">
 				<hr>
-				<h1>2) Tap on two columns below to guess the cards to discard. Remove selection by re-tapping column.</h1>
+				<h1>2) Tap on a column below to guess the card to discard.</h1>
 				<center><h1 id="optimize_tag" class="card_title">Cards on Hand</h1></center>				
 				<table id="current_cards_table" class="table table-bordered" style='text-align:center;'>
 					<tbody>
@@ -122,6 +122,7 @@
 				<thead>
 					<tr>
 						<th>Discard</th>
+						<th>Score</th>
 						<th>Hand</th>
 						<th>Crib*</th>
 						<th>Min</th>
@@ -134,23 +135,14 @@
 					<tr></tr>
 					<tr></tr>
 					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
-					<tr></tr>
 				</tbody>
 			</table>
 			<center><a id='column_descrips_title' class="card_title">See Column Descriptions</a></center>
 			<ul id='column_descrips_list' class="card_title">
 				<li><strong>Discard:</strong> Card to throw in the crib.</li>
-				<li><strong>Hand:</strong> Expected hand score.</li>
-				<li><strong>Crib* (Crib potential):</strong> Whether the discarded card could positively (+) or negatively (-) affect your points due to the crib.</li>
+				<li><strong>Score:</strong> The net expected score including the crib impact.</li>
+				<li><strong>Hand:</strong> The net expected score from hand + cut.</li>
+				<li><strong>Crib* (Crib impact):</strong> The points gain/loss from the expected crib score with the discarded card minus the average expected crib score.</li>
 				<li><strong>Min|Max:</strong> The minimum|maximum possible score of the hand if card is discarded.</li>
 			</ul>
 		</div>
@@ -163,7 +155,7 @@
 					<tr>
 						<th>Rounds</th>
 						<th>Correct</th>
-						<th>PointsLost</th>
+						<th>ExpectedPointsLost</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -180,14 +172,14 @@
 		<div class="row">
 			<button id="restart_button_optimization" type="button" class="btn btn-warning next_card_button">Practice again with new hand</button>	
 		</div>
-		<br>
 		-->
+		<br>
 
 		<div class="row">
 			<center><h1 id="practice_scoring_tag" class="card_title">2. Training: Hand Scoring</h1></center>
-			<h1 style="margin-top:10px;">Same for 5-Card and 6-Card versions.</h1>
+			<h1 style="margin-top:10px;">This is same for 5-Card and 6-Card versions.</h1>
 			<hr>
-			<h1>Begin each round by randomizing your hand and cut.</h1>
+			<h1>1) Begin each round by randomizing your hand and cut.</h1>
 			<div class="btn-group" style="margin-top:10px;">
 				<button id="randomize_scoring_button" type="button" class="btn btn-info" style="margin-top:0px;">Randomize Hand and Cut</button>
 			</div>
@@ -206,7 +198,7 @@
 			<div class="col-md-6" style="margin-top:15px;">
 				<div class="col-xs-7">
 					<h1>Guess the score:</h1>
-					<input id="score_guess">  
+					<input id="score_guess"> 
 				</div>
 				<div class="col-xs-5">
 					<button id="score_button" type="button" class="btn btn-primary next_card_button" style="font-size: 13px;">Check Score!</button>
@@ -216,7 +208,6 @@
 		<div class="row">
 			<center><h1 id='score_result' class="card_title" style="width:100%;">Result</h1></center>
 		</div>
-	
 		<div class="row">
 			<hr>
 			<h1 style="margin-bottom:10px;">Check your progress.</h1>
@@ -253,7 +244,7 @@
 	</div>
 
 	<script src="js/score.js"></script>
-	<script src="js/optimize_6card.js"></script>
+	<script src="js/optimize.js"></script>
 
 	<script type="text/javascript">
 
@@ -264,14 +255,14 @@
 		/* FUNCTIONS */		
 		function get_current_nums() {
 			var out = [];
-			for (i=1; i<=6; i++) {
+			for (i=1; i<=5; i++) {
 				out.push($('#current_cards_table tbody tr:nth-child(1) td:nth-child(' + i + ')').text());
 			}
 			return out;
 		}
 		function get_current_suits_abbrev() {
 			var out = [];
-			for (i=1; i<=6; i++) {
+			for (i=1; i<=5; i++) {
 				out.push($('#current_cards_table tbody tr:nth-child(2) td:nth-child(' + i + ') img')[0]
 											.src.replace(/^.*[\\\/]/, '').slice(0,-4).slice(0,1).toUpperCase());
 			}
@@ -294,47 +285,25 @@
 		}		
 
 		function build_optimization_res_table(optimization_results) {
-			for (var j=1; j<16; j++) {
-				$('#optimization_results tbody tr:nth-child(' + j + ')').empty();	
-				for (var i in optimization_results[j-1]) {
-					if (Number(i) === 2) {
-						continue;
-					}
-					var tmp_res = optimization_results[j-1][i];
+			$('#optimization_results tbody tr:nth-child(1)').empty();
+			$('#optimization_results tbody tr:nth-child(2)').empty();
+			$('#optimization_results tbody tr:nth-child(3)').empty();
+			$('#optimization_results tbody tr:nth-child(4)').empty();
+			$('#optimization_results tbody tr:nth-child(5)').empty();
+			for (var j = 1; j < 6; j++) {
+				for (i in optimization_results[j-1]) {
 					if (Number(i) !== 3) {
 						var aes = '<td>';
 					} else if (optimization_results[j-1][i] < 0) {
 						var aes = '<td style="color:#ff4c4c;">';
-						tmp_res = '-';
 					} else if (optimization_results[j-1][i] === 0) {
-						var aes = '<td>';						
+						var aes = '<td>';
 					} else {
-						var aes = '<td style="color:#66b266;">';
-						tmp_res = '+';
-					}
-					$('#optimization_results tbody tr:nth-child(' + j + ')').append(aes + tmp_res + '</td>');	
+						var aes = '<td style="color:#66b266;">+';
+					}		
+					$('#optimization_results tbody tr:nth-child(' + j + ')').append(aes + optimization_results[j-1][i] + '</td>');	
 				}
 			}
-		}
-
-		function card_selected_text() {
-			var cols_idx = [];
-			var idx = 0;
-			$('#current_cards_table tr:nth-child(1) td').each(function() {
-				if (this.className === 'table_card_selected') {
-					cols_idx.push(idx);
-				}
-				idx++;
-			});
-
-			var text = 'Card Selected: ';
-			for (var i=0; i<cols_idx.length; i++) {
-				if (i === 1) {
-					text = text.concat('-');
-				}
-				text = text.concat(get_current_nums()[cols_idx[i]]).concat(get_current_suits_abbrev()[cols_idx[i]]);
-			}
-			$('#card_selected').text(text);	
 		}
 
 		function randomize_optimization() {
@@ -342,9 +311,11 @@
 			$('#current_cards_table tbody tr:nth-child(2)').empty();
 			$('#card_selected').text('Card Selected: ');
 			$('#practice_optimization_result').text('');
-			for (var i=1; i<16; i++) {
-				$('#optimization_results tbody tr:nth-child(' + i + ')').empty();	
-			}
+			$('#optimization_results tbody tr:nth-child(1)').empty();
+			$('#optimization_results tbody tr:nth-child(2)').empty();
+			$('#optimization_results tbody tr:nth-child(3)').empty();
+			$('#optimization_results tbody tr:nth-child(4)').empty();
+			$('#optimization_results tbody tr:nth-child(5)').empty();
 
 			var full_num_idx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 			var full_suit_idx = [0, 1, 2, 3];
@@ -357,7 +328,7 @@
 			var rand_num_idx_arr = [];
 			var rand_suit_idx_arr = [];
 
-			for (var i=1; i<7; i++) {
+			for (var i=1; i<6; i++) {
 				while(!is_card_chosen) {
 					var rand_num_idx = Math.floor(Math.random() * 12);
 					var rand_suit_idx = Math.floor(Math.random() * 3);
@@ -383,26 +354,22 @@
 			}
 
 			if (Math.random() < 0.5 || !init) {
-				$("#crib_radio1").click();	
+				$("#crib_radio1").click();
 			} else {
 				$("#crib_radio2").click();	
 			}
 
-			var num_selected = 0;
 			$('#current_cards_table td').click(function() {
+				$('#current_cards_table td').css('background-color','#e8e8e8');
 				var col_idx = $(this).parent().children().index($(this));
-				
-				if (this.className !== 'table_card_selected' && $('#current_cards_table .table_card_selected').length < 4) {
-					$(this).addClass('table_card_selected');
-					$(this).parent().siblings().children().eq(col_idx).addClass('table_card_selected');	
-				} else {
-					$(this).removeClass('table_card_selected');
-					$(this).parent().siblings().children().eq(col_idx).removeClass('table_card_selected');	
-				}
+				$(this).css('background-color','#ffff66');
+				$(this).parent().siblings().children().eq(col_idx).css('background-color','#ffff66');
 
-				card_selected_text();
+				var current_num = get_current_nums()[col_idx];
+				var current_suit = get_current_suits_abbrev()[col_idx];
+				$('#card_selected').text('Card Selected: ' + current_num + current_suit);
 			});
-			
+
 			new_cards_optimization = true;
 			init = true;
 		}
@@ -484,6 +451,26 @@
 			new_cards_scoring = false;
 		}
 
+/*
+		function init_progress() {
+			if (typeof localStorage.current_rounds_opt === undefined) {
+				localStorage.current_rounds_opt = 0;
+				localStorage.current_corrects_opt = 0;
+				localStorage.current_pointslost_opt = 0;
+				localStorage.current_rounds_score = 0;
+				localStorage.current_corrects_score = 0;
+				localStorage.current_pointsdiff_score = 0;
+			} else {
+				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(1)').text(localStorage.current_rounds_opt);
+				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(2)').text(localStorage.current_corrects_opt);
+				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(3)').text(localStorage.current_pointslost_opt);
+				$('#progress_practice_scoring tbody tr:nth-child(1) td:nth-child(1)').text(localStorage.current_rounds_score);
+				$('#progress_practice_scoring tbody tr:nth-child(1) td:nth-child(2)').text(localStorage.current_corrects_score);
+				$('#progress_practice_scoring tbody tr:nth-child(1) td:nth-child(3)').text(localStorage.current_pointsdiff_score);
+			}
+		}
+*/
+
 		//******************************//
 
 		var suit_to_img = {'S':'images/spade.png', 'H':'images/heart.png', 'C':'images/club.png', 
@@ -523,11 +510,11 @@
 
 		$('#optimize_button').on('click', function() {
 			var card_selected = $('#card_selected').text().replace('Card Selected: ', '');
-			if (card_selected.length < 3) {
-				swal({title:"Select two cards that you think are best to discard first", type:"error", allowOutsideClick: true});
+			if (card_selected === '') {
+				swal({title:"Select a card that you think is best to discard first", type:"error", allowOutsideClick: true});
 				return;
 			}
-
+			
 			if (!$('#crib_radio1').is(':checked') && !$('#crib_radio2').is(':checked')) {
 				$('#crib_radio1').click();
 			}
@@ -548,12 +535,12 @@
 			var current_corrects = Number($('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(2)').text());
 			var current_pointslost = Number($('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(3)').text());
 			if (new_cards_optimization && selected_score === opt_score) {
-				$('#practice_optimization_result').text('Good Job. Selected Cards are Optimal.');
+				$('#practice_optimization_result').text('Good Job. Selected Card is Optimal.');
 				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(1)').text(current_rounds+1);
 				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(2)').text(current_corrects+1);
 				$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(3)').text(current_pointslost);
 			} else if (new_cards_optimization && selected_score !== opt_score) {
-				$('#practice_optimization_result').text('Wrong. Best cards to discard are ' + optimization_res[0][0] + '. You lose an expected score of ' + (opt_score-selected_score).toFixed(1));
+				$('#practice_optimization_result').text('Wrong. Best card to discard is ' + optimization_res[0][0] + '. You lose an expected score of ' + (opt_score-selected_score).toFixed(1));
 					$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(1)').text(current_rounds+1);
 					$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(2)').text(current_corrects);
 					$('#progress_practice_optimization tbody tr:nth-child(1) td:nth-child(3)').text((current_pointslost+opt_score-selected_score).toFixed(1));
@@ -609,7 +596,6 @@
 			randomize_optimization();
 			$("#score_guess").spinner("value", 4);
 		};
-
 
 	</script>
 
