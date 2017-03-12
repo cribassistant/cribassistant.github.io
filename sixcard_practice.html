@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>Cribbage Hand Optimizer</title>
+  <title>Cribassistant - Trainer</title>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   
@@ -38,7 +38,7 @@
 <body style="margin:0px 0px 0px 0px;">
 	
 	<div class="container">
-		<center><h2 id="title_font">Cribbage Practice</h2></center>
+		<center><h2 id="title_font">Training Ground</h2></center>
 		<center><p class="card_title">== 6 Card Version ==</p></center>
 		<div class="row">
 		  <div class="col-md-4">
@@ -47,11 +47,11 @@
 			  	<ul class="dropdown-menu pull-center">
 			  		<li><a href="about.html">All About the App</a></li>
 				    <li class="divider"></li>
-				    <li><a href="index.html">5-Card Optimizer</a></li>
-				    <li><a href="fivecard_practice.html">5-Card Practice</a></li>
+				    <li><a href="index.html">5-Card Evaluator</a></li>
+				    <li><a href="fivecard_practice.html">5-Card Trainer</a></li>
 				    <li class="divider"></li>
-				    <li><a href="sixcard_optimizer.html">6-Card Optimizer</a></li>
-				    <li style="background-color:#ffff66;"><a href="#">6-Card Practice</a></li>
+				    <li><a href="sixcard_optimizer.html">6-Card Evaluator</a></li>
+				    <li style="background-color:#ffff66;"><a href="#">6-Card Trainer</a></li>
 				    <li class="divider"></li>
 				    <li><a href="scorer.html">Hand Scorer</a></li>
 				    <li class="divider"></li>
@@ -60,27 +60,27 @@
 			</div>
 			<div class="col-md-8">
 				<hr>
-				<h1>Go to:</h1>
+				<h1 style="font-weight:bold;">Jump to:</h1>
 				<div class="col-md-6">
-					<a id="practice_optimization_link"><h1 class="card_title" style="margin-bottom:15px;">1) Practice Card Discarding</h1></a>
+					<a id="practice_optimization_link"><h1 class="card_title" style="margin-bottom:15px;">1. Training: Card Discarding</h1></a>
 				</div>
 				<div class="col-md-6">
-					<a id="practice_score_link"><h1 class="card_title">2) Practice Hand Scoring</h1></a>
+					<a id="practice_score_link"><h1 class="card_title">2. Training: Hand Scoring</h1></a>
 				</div>
 			</div>
 		</div>
 		
 		<div class="row">
-			<center><h1 class="card_title" style="margin-top:15px;">1) Practice Card Discarding</h1></center>
+			<center><h1 class="card_title" style="margin-top:15px;">1) Training: Card Discarding</h1></center>
 			<hr>
-			<h1>Begin each round by randomizing your hand.</h1>
+			<h1>1) Begin each round by randomizing your hand.</h1>
 			<div class="btn-group" style="margin-top:10px;">
 				<button id="randomize_button" type="button" class="btn btn-info" style="width:100%; margin-top:0px;">Randomize Crib Turn and Hand</button>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-md-push-5">
 				<br>
 				<center>
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -91,9 +91,9 @@
 					</fieldset>
 				</center>
 			</div>
-			<hr>
-			<h1>Tap on two columns below to guess the cards to discard. Remove selection by re-tapping column.</h1>
-			<div class="col-md-5">
+			<div class="col-md-5 col-md-pull-4">
+				<hr>
+				<h1>2) Tap on two columns below to guess the cards to discard. Remove selection by re-tapping column.</h1>
 				<center><h1 id="optimize_tag" class="card_title">Cards on Hand</h1></center>				
 				<table id="current_cards_table" class="table table-bordered" style='text-align:center;'>
 					<tbody>
@@ -103,7 +103,7 @@
 				</table>
 			</div>
 			<div class="col-md-3">
-				<center><h1 id="card_selected" class="card_title"></h1></center>
+				<center><h1 id="card_selected" class="card_title">Card Selected: </h1></center>
 			</div>
 		</div>
 
@@ -117,7 +117,7 @@
 		</div>
 
 		<div class="row">
-			<center><h1 id="optimize_tag" class="card_title" style="margin-top:10px;">Optimization Results</h1></center>
+			<center><h1 id="optimize_tag" class="card_title" style="margin-top:10px;">Evaluation Results</h1></center>
 			<table id="optimization_results" class="table table-striped table-bordered" style="text-align:center;">
 				<thead>
 					<tr>
@@ -158,7 +158,7 @@
 
 		<div class="row">
 			<hr>
-			<h1>How are you doing in discarding the right cards?</h1>
+			<h1>Check your progress.</h1>
 			<table id="progress_practice_optimization" class="table table-bordered" style='text-align:center; margin-top:10px;'>
 				<thead>
 					<tr>
@@ -177,18 +177,20 @@
 			</table>
 		</div>
 
+		<!--
 		<div class="row">
 			<button id="restart_button_optimization" type="button" class="btn btn-warning next_card_button">Practice again with new hand</button>	
 		</div>
 		<br>
+		-->
 
 		<div class="row">
-			<center><h1 id="practice_scoring_tag" class="card_title">2) Practice Hand Scoring</h1></center>
+			<center><h1 id="practice_scoring_tag" class="card_title">2. Training: Hand Scoring</h1></center>
 			<h1 style="margin-top:10px;">Same for 5-Card and 6-Card versions.</h1>
 			<hr>
-			<h1>Begin each round by randomizing your hand.</h1>
+			<h1>Begin each round by randomizing your hand and cut.</h1>
 			<div class="btn-group" style="margin-top:10px;">
-				<button id="randomize_scoring_button" type="button" class="btn btn-info" style="margin-top:0px;">Randomize Cards</button>
+				<button id="randomize_scoring_button" type="button" class="btn btn-info" style="margin-top:0px;">Randomize Hand and Cut</button>
 			</div>
 		</div>
 		<div class="row" style="margin-top:10px;">
@@ -218,7 +220,7 @@
 	
 		<div class="row">
 			<hr>
-			<h1 style="margin-bottom:10px;">How are you doing in scoring?</h1>
+			<h1 style="margin-bottom:10px;">Check your progress.</h1>
 			<table id="progress_practice_scoring" class="table table-bordered" style='text-align:center;'>
 				<thead>
 					<tr>
@@ -242,7 +244,7 @@
 			<br>
 			<footer>
 				<center>
-			  	<p class="footer_text">Copyright &copy; 2017 CribbageOptimizer.</p> 
+			  	<p class="footer_text">Copyright &copy; 2017 CribbageAssistant.</p> 
 			  	<p>All rights reserved.</p>
 			  </center>
 			</footer>
@@ -334,7 +336,7 @@
 		function randomize_optimization() {
 			$('#current_cards_table tbody tr:nth-child(1)').empty();
 			$('#current_cards_table tbody tr:nth-child(2)').empty();
-			$('#card_selected').text('');
+			$('#card_selected').text('Card Selected: ');
 			$('#practice_optimization_result').text('');
 			for (var i=1; i<16; i++) {
 				$('#optimization_results tbody tr:nth-child(' + i + ')').empty();	

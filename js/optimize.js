@@ -198,11 +198,11 @@ function optimize(hand_names, hand_suits, yourcrib) {
 
 	var exp_scores_hand = compute_expected_hand(hand_names, hand_suits);
 	var exp_scores_crib = compute_expected_crib_impact(hand_names, hand_suits);
-
+	
 	if (!yourcrib) {
 		exp_scores_crib = exp_scores_crib.map(function(x) { return -x; });
 	}
-
+	
 	var exp_scores = [];
 	for (var i = 0; i < exp_scores_hand.length; i++){
   	exp_scores.push((exp_scores_hand[i].score + exp_scores_crib[i]).toFixed(1));

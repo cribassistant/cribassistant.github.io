@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>Cribbage Hand Optimizer</title>
+  <title>Cribassistant - Evaluator</title>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   
@@ -40,7 +40,7 @@
 <body style="margin:0px 0px 0px 0px;">
 	
 	<div class="container">
-		<center><h2 id="title_font">Cribbage Optimizer</h2></center>
+		<center><h2 id="title_font">Cribbage Evaluator</h2></center>
 		<center><p class="card_title">== 6 Card Version ==</p></center>
 		<div class="row">
 		  <div class="col-md-4">
@@ -49,11 +49,11 @@
 			  	<ul class="dropdown-menu pull-center">
 				    <li><a href="about.html">All About the App</a></li>
 				    <li class="divider"></li>
-				    <li><a href="index.html">5-Card Optimizer</a></li>
-				    <li><a href="fivecard_practice.html">5-Card Practice</a></li>
+				    <li><a href="index.html">5-Card Evaluator</a></li>
+				    <li><a href="fivecard_practice.html">5-Card Trainer</a></li>
 				    <li class="divider"></li>
-				    <li style="background-color:#ffff66;"><a href="#">6-Card Optimizer</a></li>
-				    <li><a href="sixcard_practice.html">6-Card Practice</a></li>
+				    <li style="background-color:#ffff66;"><a href="#">6-Card Evaluator</a></li>
+				    <li><a href="sixcard_practice.html">6-Card Trainer</a></li>
 				    <li class="divider"></li>
 				    <li><a href="scorer.html">Hand Scorer</a></li>
 				    <li class="divider"></li>
@@ -74,7 +74,7 @@
 		</div>			
 		<div class="row">
 			<hr>
-			<h1>Select the 6 cards in your hand.</h1>
+			<h1>1) Select the 6 cards in your hand.</h1>
 			<div class="col-md-6">
 				<div id="frame_card1_num" class="frame">
 					<ul class="slidee"></ul>
@@ -225,7 +225,7 @@
 		<br>
 
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 col-md-push-6">
 				<center><h1 id="optimize_tag" class="card_title">Cards On Hand</h1></center>
 				<table id="current_cards_table" class="table table-bordered" style='text-align:center;'>
 					<tbody>
@@ -234,9 +234,9 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 col-md-pull-6">
 				<hr>
-				<h1 style="margin-bottom:15px;">Select who's crib it is.</h1>
+				<h1 style="margin-bottom:15px;">2) Select who's crib it is.</h1>
 				<center>
 					<fieldset data-role="controlgroup" data-type="horizontal">
 					  <label for="crib_radio1" id="crib_label1" class='ui-checkboxradio-checked ui-state-active'>Your Crib</label>
@@ -250,11 +250,11 @@
 
 		<div class="row">
 			<div class='col-md-4'>
-				<button id="optimize_button" type="button" class="btn btn-success next_card_button">Optimize!</button>
+				<button id="optimize_button" type="button" class="btn btn-success next_card_button">Determine Card to Discard!</button>
 			</div>
 			<div class='col-md-8'>
 				<br>
-				<center><h1 id="optimize_tag" class="card_title">Optimization Results</h1></center>	
+				<center><h1 id="optimize_tag" class="card_title">Evaluation Results</h1></center>	
 				<table id="optimization_results" class="table table-striped table-bordered" style="text-align:center;">
 					<thead>
 						<tr>
@@ -296,7 +296,7 @@
 
 		<div class="row">
 			<hr>
-			<h1 style="margin-bottom:10px;">Find out what you actually scored.</h1>
+			<h1 style="margin-bottom:10px;">3) Find out what you actually scored.</h1>
 		</div>
 		<div class="row">
 			<div class='col-md-6'>	
@@ -325,7 +325,7 @@
 			</div>
 
 			<div class="col-md-6">
-				<button id="score_button" type="button" class="btn btn-primary next_card_button">Compute Scores!</button>
+				<button id="score_button" type="button" class="btn btn-primary next_card_button">Check Scores!</button>
 			</div>
 		</div>
 		
@@ -369,7 +369,7 @@
 	<hr>
 	<footer>
 		<center>
-	  	<p class="footer_text">Copyright &copy; 2017 CribbageOptimizer.</p> 
+	  	<p class="footer_text">Copyright &copy; 2017 CribbageAssistant.</p> 
 	  	<p>All rights reserved.</p>
 	  </center>
 	</footer>
