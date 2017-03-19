@@ -340,9 +340,11 @@ input[type='radio'] {
   .frame {
     height: 60px;
     line-height: 60px;
+    width: 90%;
+    margin: 15px 0 15px 0;
   }
   .frame ul {
-    font-size: 16px;
+    font-size: 14px;
   }
   .frame ul li {
     width: 60px;
@@ -354,6 +356,7 @@ input[type='radio'] {
     opacity: 0.1;
   }
   .card_title {
+    margin-top: 20px;
     font-size: 20px;
   }
   .table {
@@ -365,11 +368,12 @@ input[type='radio'] {
     font-weight: bold;
     border: 2px solid #000;
     border-radius: 5px;
+    margin: 20px 0 10px 0;
   }
   #randomize_button {
     font-size: 20px;
     height: 50px;
-    margin-top: 0px;
+    margin: 20px 0 20px 0;
     width: 98%;
   }
   #suits_matter_label {
@@ -381,6 +385,7 @@ input[type='radio'] {
     border: 2px solid #000;
     border-radius: 5px;
     width: 98%;
+    margin: 20px 0 20px 0;
   }
   .ui-checkboxradio-icon  {
     transform: scale(1);
@@ -406,7 +411,7 @@ input[type='radio'] {
     padding-top: 15px;
   } 
   .next_card_button {
-    margin-top: 40px;
+    margin-top: 60px;
     width: 100%;
     font-size: 18px;
     height: 45px;
