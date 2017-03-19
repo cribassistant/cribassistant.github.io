@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>Cribassistant - Evaluator</title>
 
@@ -41,25 +41,25 @@
 	
 	<div class="container">
 		<center><h2 id="title_font">Cribbage Evaluator</h2></center>
-		<center><p class="card_title">== 6 Card Version ==</p></center>
+		<center><p class="card_title">== 5 Card Version ==</p></center>
 		<div class="row">
 		  <div class="col-md-4">
 			  <div class="btn-group dropdown">
 				  <button type="button" class="btn btn-warning dropdown-toggle" id="menu" data-toggle="dropdown">Menu</button>
 			  	<ul class="dropdown-menu pull-center">
-				    <li><a href="about.html">All About the App</a></li>
+			  		<li><a href="about.html">All About the App</a></li>
 				    <li class="divider"></li>
-				    <li><a href="index.html">5-Card Evaluator</a></li>
+				    <li style="background-color:#ffff66;"><a href="#">5-Card Evaluator</a></li>
 				    <li><a href="fivecard_practice.html">5-Card Trainer</a></li>
 				    <li class="divider"></li>
-				    <li style="background-color:#ffff66;"><a href="#">6-Card Evaluator</a></li>
+				    <li><a href="sixcard_optimizer.html">6-Card Evaluator</a></li>
 				    <li><a href="sixcard_practice.html">6-Card Trainer</a></li>
 				    <li class="divider"></li>
 				    <li><a href="scorer.html">Hand Scorer</a></li>
 				    <li class="divider"></li>
 				  </ul>	
 				</div>
-			</div>
+			</div>	
 			<div class="col-md-8">
 				<div class="col-xs-6">
 				  <fieldset>
@@ -71,10 +71,12 @@
 					<button id="randomize_button" type="button" class="btn btn-info">Randomize Hand</button>
 				</div>
 			</div>
-		</div>			
+		</div>
 		<div class="row">
 			<hr>
-			<h1>1) Select the 6 cards in your hand.</h1>
+			<h1>1) Select the 5 cards in your hand.</h1>
+		</div>
+		<div class="row">
 			<div class="col-md-6">
 				<div id="frame_card1_num" class="frame">
 					<ul class="slidee"></ul>
@@ -197,29 +199,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div id="frame_card6_num" class="frame">
-					<ul class="slidee"></ul>
-				</div>
-				<div id="frame_card6_suit" class="suit">
-					<div class="row">
-						<center>
-							<div class="col-xs-3">
-								<img src="images/spade.png" />
-							</div>
-							<div class="col-xs-3">
-								<img class="active_suit" src="images/heart.png" />
-							</div>
-							<div class="col-xs-3">
-								<img src="images/club.png" />
-							</div>
-							<div class="col-xs-3">
-								<img src="images/diamond.png" />
-							</div>
-						</center>
-					</div>
-				</div>
-			</div>
 		</div>
 
 		<br>
@@ -239,7 +218,7 @@
 				<h1 style="margin-bottom:15px;">2) Select who's crib it is.</h1>
 				<center>
 					<fieldset data-role="controlgroup" data-type="horizontal">
-					  <label for="crib_radio1" id="crib_label1" class='ui-checkboxradio-checked ui-state-active'>Your Crib</label>
+					  <label for="crib_radio1" id="crib_label1">Your Crib</label>
 					  <input type="radio" name="crib_radio1" id="crib_radio1">
 					  <label for="crib_radio2" id="crib_label2">Other's Crib</label>
 					  <input type="radio" name="crib_radio1" id="crib_radio2">
@@ -266,16 +245,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
 						<tr></tr>
 						<tr></tr>
 						<tr></tr>
@@ -344,16 +313,6 @@
 						<tr></tr>
 						<tr></tr>
 						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
-						<tr></tr>
 					</tbody>
 				</table>
 			</div>
@@ -362,22 +321,28 @@
 			</div>
 		</div>
 
+		<div class="row">
+			<hr>
+			<br>
+			<footer>
+				<center>
+			  	<p class="footer_text">Copyright &copy; 2017 CribbageAssistant.</p> 
+			  	<p>All rights reserved.</p>
+			  </center>
+			</footer>
+			<br>
+		</div>
 	</div>
 
-	<br>
-	<hr>
-	<footer>
-		<center>
-	  	<p class="footer_text">Copyright &copy; 2017 CribbageAssistant.</p> 
-	  	<p>All rights reserved.</p>
-	  </center>
-	</footer>
-	<br>
 
 	<script src="js/score.js"></script>
-	<script src="js/optimize_6card.js"></script>
+	<script src="js/optimize.js"></script>
 
 	<script type="text/javascript">
+
+		/*
+		TODO: Add a demo video
+		*/
 
 		/* FUNCTIONS */
 		function hasDuplicates(array) {
@@ -392,6 +357,7 @@
         }
 	    }
 	    return false;
+		  //return (new Set(array)).size !== array.length;
 		}
 		
 		function check_hand_dup(cut_included) {
@@ -417,7 +383,6 @@
 			$('#frame_card3_suit img:eq(2)').addClass('active_suit');
 			$('#frame_card4_suit img:eq(3)').addClass('active_suit');
 			$('#frame_card5_suit img:eq(0)').addClass('active_suit');
-			$('#frame_card6_suit img:eq(1)').addClass('active_suit');
 			$('#frame_cut_suit img:eq(0)').addClass('active_suit');
 			build_current_cards_table();
 		}
@@ -429,15 +394,13 @@
 			frame_card4_num.toCenter();
 			frame_card5_num.toCenter();
 			frame_card5_num.prev();
-			frame_card6_num.toCenter();
-			frame_card6_num.prev();
 			frame_cut_num.toCenter();
 			frame_cut_num.next();
 		}
 
 		function get_current_nums() {
 			var out = [];
-			for (i=1; i<=6; i++) {
+			for (i=1; i<=5; i++) {
 				out.push($('#frame_card' + i + '_num .active').text());
 			}
 			return out;
@@ -445,7 +408,7 @@
 
 		function get_current_suits_abbrev() {
 			var out = [];
-			for (i=1; i<=6; i++) {
+			for (i=1; i<=5; i++) {
 				out.push($('#frame_card' + i + '_suit .active_suit')[0].src
 											.replace(/^.*[\\\/]/, '').slice(0,-4)
 											.slice(0,1).toUpperCase());
@@ -473,7 +436,7 @@
 			if (!$("suits_matter_checkbox").is(':checked')) {
 				var suits = ['S','H','C','D'];
 				var fh_tmp = fh.slice();
-				fh_tmp.splice(-2,2);
+				fh_tmp.splice(-1,1);
 				var n = 0;
 				while (fh_tmp.indexOf(current_nums[4].concat('-').concat(current_suits[4])) > -1) {
 					$("#frame_card5_suit img").removeClass("active_suit");
@@ -487,30 +450,19 @@
 						break;
 					}
 				}
-				fh_tmp.push(current_nums[4].concat('-').concat(current_suits[4]));
-				while (fh_tmp.indexOf(current_nums[5].concat('-').concat(current_suits[5])) > -1) {
-					$("#frame_card6_suit img").removeClass("active_suit");
-					$("#frame_card6_suit img:eq(" + (n+1) + ")").addClass('active_suit');
-					current_suits[5] = suits[(n+1)%4];
-					n++;
-					if (n>6) {
-						$("#frame_card6_suit img").removeClass("active_suit");
-						$("#frame_card6_suit img:eq(0)").addClass('active_suit');
-						current_suits[5] = suits[0];
-						break;
-					}
-				}
 			}
 			$('#current_cards_table tbody tr:nth-child(2)')
 				.append('<td><img src="' + suit_to_img[current_suits[4]] + '"/></td>');
-			$('#current_cards_table tbody tr:nth-child(2)')
-				.append('<td><img src="' + suit_to_img[current_suits[5]] + '"/></td>');
 		}
 
 		function build_optimization_res_table(optimization_results) {
-			for (var j=1; j<16; j++) {
-				$('#optimization_results tbody tr:nth-child(' + j + ')').empty();	
-				for (var i in optimization_results[j-1]) {
+			$('#optimization_results tbody tr:nth-child(1)').empty();
+			$('#optimization_results tbody tr:nth-child(2)').empty();
+			$('#optimization_results tbody tr:nth-child(3)').empty();
+			$('#optimization_results tbody tr:nth-child(4)').empty();
+			$('#optimization_results tbody tr:nth-child(5)').empty();
+			for (var j = 1; j < 6; j++) {
+				for (i in optimization_results[j-1]) {
 					if (Number(i) === 2) {
 						continue;
 					}
@@ -541,7 +493,7 @@
 			var rand_num_idx_arr = [];
 			var rand_suit_idx_arr = [];
 
-			for (var i=1; i<7; i++) {
+			for (var i=1; i<6; i++) {
 				while(!is_card_chosen) {
 					var rand_num_idx = Math.floor(Math.random() * 12);
 					var rand_suit_idx = Math.floor(Math.random() * 3);
@@ -558,7 +510,7 @@
 			}
 
 			var tmp = find_indices_ordered(rand_num_idx_arr);
-			for (var p=1; p<7; p++) {
+			for (var p=1; p<6; p++) {
 				$('#frame_card' + p + '_num').sly('activate', rand_num_idx_arr[tmp[p-1]]);
 				$('#frame_card' + p + '_suit img').removeClass("active_suit");
 				$('#frame_card' + p + '_suit img:eq(' + rand_suit_idx_arr[tmp[p-1]] + ')').addClass('active_suit');
@@ -573,8 +525,8 @@
 
 		window.onload = function () { 
 			if (typeof localStorage.init === 'undefined') {
-				swal({title:"Welcome to <CripAppName>", 
-							text:"This app works best on Chrome. Use the menu bar to switch between a 5 and 6 card version. You can also switch between optimizing or scoring a hand, or to just get some practice.",
+				swal({title:"Welcome to Cribbage Assistant!", 
+							text:"Use the menu bar for more options and info. Have fun!",
 							allowOutsideClick: true});	
 			}
 			localStorage.init = true;
@@ -593,7 +545,7 @@
 		$('input').checkboxradio({
 			create: function(event,ui) { $('#crib_radio1').click(); }
 		});
-
+		
 		$('#column_descrips_title').on('click', function() {
 			if ($('#column_descrips_list').css('display') === 'none') {
 				$('#column_descrips_list').css('display', 'block');	
@@ -623,7 +575,6 @@
 		for (c in card_nums) { $('#frame_card3_num ul').append('<li>' + card_nums[c] + '</li>'); }
 		for (c in card_nums) { $('#frame_card4_num ul').append('<li>' + card_nums[c] + '</li>'); }
 		for (c in card_nums) { $('#frame_card5_num ul').append('<li>' + card_nums[c] + '</li>'); }
-		for (c in card_nums) { $('#frame_card6_num ul').append('<li>' + card_nums[c] + '</li>'); }
 		for (c in card_nums) { $('#frame_cut_num ul').append('<li>' + card_nums[c] + '</li>'); }
 
 		var options_card = { horizontal: 1,
@@ -644,7 +595,6 @@
 		var frame_card4_num = new Sly('#frame_card4_num', options_card).init();
 		options_card['startAt'] = 5;
 		var frame_card5_num = new Sly('#frame_card5_num', options_card).init();
-		var frame_card6_num = new Sly('#frame_card6_num', options_card).init();
 
 		options_card['startAt'] = 7;
 		var frame_cut_num = new Sly('#frame_cut_num', options_card).init();
@@ -689,14 +639,6 @@
 			$(this).addClass('active_suit');
 			build_current_cards_table();
 		});
-		$('#frame_card6_suit img').on('click', function() {
-			if ($(this).attr('class') === 'active_suit') {
-				return;
-			}
-			$("#frame_card6_suit img").removeClass("active_suit");
-			$(this).addClass('active_suit');
-			build_current_cards_table();
-		});
 		$('#frame_cut_suit img').on('click', function() {
 			$("#frame_cut_suit img").removeClass("active_suit");
 			$(this).addClass('active_suit');
@@ -725,11 +667,9 @@
 		frame_card5_num.on('active', function(e) {
 			build_current_cards_table();
 		});
-		frame_card6_num.on('active', function(e) {
-			build_current_cards_table();
-		});
 
 		$('#randomize_button').on('click', function() {
+			//swal({title:"Will Be Available Soon", type:"error", allowOutsideClick: true});
 			randomize_hand();
 		});
 
@@ -795,39 +735,41 @@
 				swal({title:"Hand Has Duplicates!", type:"error", allowOutsideClick: true});
 				return;
 			}
+			$('#scores_results tbody tr:nth-child(1)').empty();
+			$('#scores_results tbody tr:nth-child(2)').empty();
+			$('#scores_results tbody tr:nth-child(3)').empty();
+			$('#scores_results tbody tr:nth-child(4)').empty();
+			$('#scores_results tbody tr:nth-child(5)').empty();
 
-			for (var i=1; i<16; i++) {
-				$('#scores_results tbody tr:nth-child(' + i + ')').empty();				
-			}
+			var score1 = score_hand([cut_num].concat(current_nums.slice(1)), 
+											[cut_suit].concat(current_suits.slice(1)), cut_num, cut_suit);
+			var score2 = score_hand([cut_num].concat(current_nums.slice(0,1).concat(current_nums.slice(2))),
+												[cut_suit].concat(current_suits.slice(0,1).concat(current_suits.slice(2))), cut_num, cut_suit);
+			var score3 = score_hand([cut_num].concat(current_nums.slice(0,2).concat(current_nums.slice(3))),
+												[cut_suit].concat(current_suits.slice(0,2).concat(current_suits.slice(3))), cut_num, cut_suit);
+			var score4 = score_hand([cut_num].concat(current_nums.slice(0,3).concat(current_nums.slice(4))),
+												[cut_suit].concat(current_suits.slice(0,3).concat(current_suits.slice(4))), cut_num, cut_suit);
+			var score5 = score_hand([cut_num].concat(current_nums.slice(0,4)), 
+											[cut_suit].concat(current_suits.slice(0,4)), cut_num, cut_suit);			
 
-			var scores = [];
-			var idx_to_both_hand_names_suits = {};
-			var idx = 0;
-			for (var h1 in current_nums) {
-				for (var h2 in current_nums) {
-					if (h1 < h2) {
-						var tmp_hand_names = current_nums.slice(0);
-						var tmp_hand_suits = current_suits.slice(0);
-						tmp_hand_names.splice(h2,1);
-						tmp_hand_names.splice(h1,1);
-						tmp_hand_suits.splice(h2,1);
-						tmp_hand_suits.splice(h1,1);
-						scores.push(score_hand(tmp_hand_names.concat(cut_num), tmp_hand_suits.concat(cut_suit), 
-																		cut_num, cut_suit));
-						idx_to_both_hand_names_suits[idx.toString()] = current_nums[h1].concat(current_suits[h1]).concat('-')
-																														.concat(current_nums[h2]).concat(current_suits[h2]);
-						idx++;
-					}
-				}
-			}
-			
+			var scores = [score1, score2, score3, score4, score5];
 			var tmp = find_indices_ordered(scores, true);
 
-			for (var s in scores) {
-				$('#scores_results tbody tr:nth-child(' + (Number(s)+1) + ')')
-					.append('<td>' + idx_to_both_hand_names_suits[tmp[s].toString()] + '</td>' + 
-					'<td>' + scores[tmp[s]] + '</td>');
-			}
+			$('#scores_results tbody tr:nth-child(1)')
+				.append('<td>' + current_nums[tmp[0]] + current_suits[tmp[0]] + '</td>' + '<td>' + scores[tmp[0]] + 
+					"</td>");
+			$('#scores_results tbody tr:nth-child(2)')
+					.append('<td>' + current_nums[tmp[1]] + current_suits[tmp[1]] + '</td>' + '<td>' + scores[tmp[1]] + 
+						"</td>");
+			$('#scores_results tbody tr:nth-child(3)')
+					.append('<td>' + current_nums[tmp[2]] + current_suits[tmp[2]] + '</td>' + '<td>' + scores[tmp[2]] + 
+						"</td>");
+			$('#scores_results tbody tr:nth-child(4)')
+					.append('<td>' + current_nums[tmp[3]] + current_suits[tmp[3]] + '</td>' + '<td>' + scores[tmp[3]] + 
+						"</td>");
+			$('#scores_results tbody tr:nth-child(5)')
+					.append('<td>' + current_nums[tmp[4]] + current_suits[tmp[4]] + '</td>' + '<td>' + scores[tmp[4]] + 
+						"</td>");
 
 			$('html, body').animate({
 		     scrollTop: $("#scores_results").offset().top
@@ -839,10 +781,17 @@
 			reset_nums();
 			reset_suits();
 			
-			for (var i=1; i<16; i++) {
-				$('#optimization_results tbody tr:nth-child(' + i + ')').empty();
-				$('#scores_results tbody tr:nth-child(' + i + ')').empty();
-			}
+			$('#optimization_results tbody tr:nth-child(1)').empty();
+			$('#optimization_results tbody tr:nth-child(2)').empty();
+			$('#optimization_results tbody tr:nth-child(3)').empty();
+			$('#optimization_results tbody tr:nth-child(4)').empty();
+			$('#optimization_results tbody tr:nth-child(5)').empty();
+			
+			$('#scores_results tbody tr:nth-child(1)').empty();
+			$('#scores_results tbody tr:nth-child(2)').empty();
+			$('#scores_results tbody tr:nth-child(3)').empty();
+			$('#scores_results tbody tr:nth-child(4)').empty();
+			$('#scores_results tbody tr:nth-child(5)').empty();
 		});
 
 		window.onresize = function(event) {
@@ -851,7 +800,6 @@
 			frame_card3_num.reload();
 			frame_card4_num.reload();
 			frame_card5_num.reload();
-			frame_card6_num.reload();
 			frame_cut_num.reload();
 		};
 
