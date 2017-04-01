@@ -38,15 +38,19 @@
 <body style="margin:0px 0px 0px 0px;">
 	
 	<div class="container">
+		<center><h2 id="title_font">Training Ground</h2></center>
+		<center><p class="card_title">== 5 Card Version ==</p></center>
 		<div class="row">
-			<div class="col-md-3 col-md-push-9">
-			</div>
+			<center>
+				<video id="video" onClick="playPause();">
+					<source src="images/fivecard_trainer.mp4" type="video/mp4" />
+				</video>
+			</center>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
 			<div class="col-md-6">
-				<center><h2 id="title_font">Training Ground</h2></center>
-				<center><p class="card_title">== 5 Card Version ==</p></center>
-			</div>
-			<div class="col-md-3 col-md-pull-9">
-				<div class="btn-group dropdown">
+			  <div class="btn-group dropdown">
 				  <button type="button" class="btn btn-warning dropdown-toggle" id="menu" data-toggle="dropdown">Menu</button>
 			  	<ul class="dropdown-menu pull-center">
 			  		<li><a href="index.html">Landing Page</a></li>
@@ -63,6 +67,7 @@
 				  </ul>	
 				</div>
 			</div>
+			<div class="col-md-3"></div>
 		</div>
 		<div class="row">
 			<hr>
@@ -247,6 +252,7 @@
 
 	<script src="js/score.js"></script>
 	<script src="js/optimize.js"></script>
+	<script src="js/video_play.js"></script>
 
 	<script type="text/javascript">
 
