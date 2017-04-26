@@ -248,9 +248,7 @@
 
 	<script type="text/javascript">
 
-		/*
-		TODO: Add a demo video
-		*/
+		swal({title:"You found me!", type:"error", allowOutsideClick: true});
 
 		/* FUNCTIONS */		
 		function get_current_nums() {
@@ -595,7 +593,15 @@
 			init = false;
 			randomize_optimization();
 			$("#score_guess").spinner("value", 4);
+			swal({title:"AGLC Baby! Crib Impact Included", allowOutsideClick: true});
 		};
+
+		$('.footer_text').on('click', function() {
+  		sessionStorage.secret++;
+  		if (sessionStorage.secret > 5) {
+  			window.location.href = "fivecard_optimizer_adv.html";
+  		}  		
+		});
 
 	</script>
 
