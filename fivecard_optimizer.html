@@ -550,7 +550,13 @@
 	    $(this).find('.dropdown-menu').first().stop(true, true).slideUp(350);
 	  });
 		
+		/*
 		$('input[type="radio"]').checkboxradio({
+			create: function(event,ui) { $('#crib_radio1').click(); }
+		});
+		*/
+		
+		$('input').checkboxradio({
 			create: function(event,ui) { $('#crib_radio1').click(); }
 		});
 		
