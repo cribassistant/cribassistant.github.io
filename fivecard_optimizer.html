@@ -564,15 +564,11 @@
 	    $(this).find('.dropdown-menu').first().stop(true, true).slideUp(350);
 	  });
 		
-		/*
 		$('input[type="radio"]').checkboxradio({
 			create: function(event,ui) { $('#crib_radio1').click(); }
 		});
-		*/
 		
-		$('input').checkboxradio({
-			create: function(event,ui) { $('#crib_radio1').click(); }
-		});
+		$('input[type="checkbox"]').checkboxradio();
 		
 		$('#column_descrips_title').on('click', function() {
 			if ($('#column_descrips_list').css('display') === 'none') {
